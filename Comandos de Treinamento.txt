@@ -1,0 +1,13 @@
+opencv_traincascade -data data_1 -vec pistas_115.vec -bg bg.txt -minHitRate 0.999 -maxFalseAlarmRate 0.5 -numPos 220 -numNeg 240 -w 115 -h 115 -mode ALL -featureType Haar -maxWeakCount 100
+
+opencv_traincascade -data data_1 -vec pistas_80.vec -bg bg.txt -minHitRate 0.999 -maxFalseAlarmRate 0.5 -numPos 220 -numNeg 240 -w 80 -h 80 -mode ALL -featureType Haar -numStages 15
+opencv_traincascade -data data_2 -vec pistas_50.vec -bg bg.txt -numPos 220 -numNeg 240 -numStages 15 -w 50 -h 50 -featureType LBP -maxFalseAlarmRate 0.3
+
+
+opencv_traincascade -data data -vec pistas.vec -bg bg.txt -numPos 200 -numNeg 200 -numStages 10 -w 115 -h 115 -featureType LBP -maxFalseAlarmRate 0.3
+opencv_traincascade -data data -vec pistas.vec -bg bg.txt -numPos 200 -numNeg 200 -numStages 20 -w 115 -h 115 -featureType LBP -maxFalseAlarmRate 0.3
+opencv_traincascade -data data_2 -vec pistas_45.vec -bg bg.txt -numPos 200 -numNeg 200 -numStages 50 -w 45 -h 45 -featureType LBP -maxFalseAlarmRate 0.3
+opencv_traincascade -data data_3 -vec pistas_45.vec -bg bg.txt -numPos 200 -numNeg 200 -numStages 30 -w 45 -h 45 -featureType LBP -maxFalseAlarmRate 0.3
+
+
+opencv_createsamples -vec pistas_80.vec -w 80 -h 80 -info pistas.info -num 240
